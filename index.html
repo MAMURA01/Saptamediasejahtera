@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sapta Media Sejahtera</title>
+
+  <style>
+    :root {
+      --primary-color: #082527;
+      --secondary-color: #A2CE47;
+      --text-color: #0a0a0a;
+      --bg-color: #f4f6f8;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    body {
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary-color);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 72px; /* bigger logo */
+    }
+
+    nav a {
+      color: var(--secondary-color); /* header font color */
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      color: #ffffff;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 120px 40px;
+      background: url("asset/bg.jpg") center 55% / cover no-repeat;
+      color: #fff;
+      text-align: center;
+    }
+
+    
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 34px;
+    }
+
+    .section p {
+      max-width: 900px;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #082527; /* card color changed */
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      color: #ffffff;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--secondary-color);
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--primary-color), #0f3c40);
+      color: #fff;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      opacity: 0.95;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      padding: 16px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0d0d0d;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="asset/Saptamedia.png" alt="Sapta Media Sejahtera" />
+    <nav>
+      <a href="#about">Tentang Kami</a>
+      <a href="#metro-e">Metro-E</a>
+      <a href="#benefits">Keunggulan</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Solusi Metro Ethernet Andal</h1>
+      <p>Konektivitas dedicated berperforma tinggi untuk enterprise, backbone, dan jaringan kritikal.</p>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>Tentang Kami</h2>
+    <p>
+      Kami adalah penyedia layanan Internet (ISP) yang berfokus pada solusi Metro Ethernet (Metro-E)
+      untuk segmen enterprise dan institusi, menghadirkan koneksi stabil, latensi rendah, dan SLA profesional.
+    </p>
+  </section>
+
+  <section id="metro-e" class="section">
+    <h2>Apa itu Metro Ethernet?</h2>
+    <p>
+      Metro Ethernet adalah layanan Layer 2 dedicated yang menghubungkan antar lokasi bisnis dengan bandwidth
+      terjamin dan performa konsisten.
+    </p>
+  </section>
+
+  <section id="benefits" class="section">
+    <h2>Keunggulan Layanan Metro-E Kami</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Bandwidth Dedicated</h3>
+        <p>Tanpa sharing, performa stabil untuk kebutuhan kritikal.</p>
+      </div>
+      <div class="card">
+        <h3>Latensi Rendah</h3>
+        <p>Optimal untuk data center, VoIP, dan aplikasi real-time.</p>
+      </div>
+      <div class="card">
+        <h3>SLA Enterprise</h3>
+        <p>Jaminan uptime tinggi dengan dukungan teknis profesional.</p>
+      </div>
+      <div class="card">
+        <h3>Scalable</h3>
+        <p>Mudah ditingkatkan mengikuti pertumbuhan bisnis Anda.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <h2>Siap Meningkatkan Konektivitas Bisnis Anda?</h2>
+    <p>Diskusikan kebutuhan jaringan Anda bersama tim profesional kami.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="mailto:info@saptamedia.id">
+        ✉️ Hubungi Sales (Email)
+      </a>
+      <a class="btn-secondary" href="https://wa.me/6281128001310" target="_blank">
+        💬 Hubungi Sales (WhatsApp)
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 PT Sapta Media Sejahtera. All rights reserved.
+  </footer>
+
+</body>
+</html>
