@@ -31,13 +31,13 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000; /* always on top */
       background: var(--primary-color);
       padding: 16px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: nowrap; /* prevent wrap */
+      flex-wrap: nowrap;
     }
 
     header img {
@@ -87,6 +87,44 @@
 
     /* SECTION */
     .section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-split {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .split-card {
+      background: linear-gradient(135deg, var(--primary-color), #0f3c40);
+      color: #fff;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .split-card h3 {
+      margin-bottom: 12px;
+      color: var(--secondary-color);
+    }
+
+    .highlight-list {
+      margin-top: 20px;
+      list-style: none;
+    }
+
+    .highlight-list li {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .section-highlight {
+      background: #eef2f3;
+      border-radius: 24px;
       padding: 80px 40px;
       max-width: 1100px;
       margin: auto;
@@ -148,7 +186,9 @@
     }
 
     .cta a {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       margin-top: 28px;
       background: var(--secondary-color);
       color: var(--primary-color);
@@ -174,6 +214,10 @@
     }
 
     @media (max-width: 768px) {
+      .section-split {
+        grid-template-columns: 1fr;
+      }
+
       header {
         position: relative;
         flex-direction: row;
@@ -214,7 +258,24 @@
         font-size: 14px;
         white-space: nowrap;
       }
-    } 
+    }
+
+      header img {
+        height: 52px;
+        flex-shrink: 0;
+      }
+
+      nav.nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    
+
       header img {
         height: 52px;
         flex-shrink: 0; /* keep logo left */
@@ -259,7 +320,6 @@
         font-size: 32px;
       }
     
-
       header img {
         height: 60px;
       }
@@ -295,6 +355,7 @@
     <nav class="nav-menu">
       <a href="#about">Tentang Kami</a>
       <a href="#metro-e">Metro-E</a>
+      <a href="#packages">Daftar Paket</a>
       <a href="#benefits">Keunggulan</a>
       <a href="#contact">Kontak</a>
     </nav>
@@ -314,20 +375,69 @@
     </div>
   </section>
 
-  <section id="about" class="section">
-    <h2>Tentang Kami</h2>
-    <p>
-      Kami adalah penyedia layanan Internet (ISP) yang berfokus pada solusi Metro Ethernet (Metro-E)
-      untuk segmen enterprise dan institusi, menghadirkan koneksi stabil, latensi rendah, dan SLA profesional.
-    </p>
+  <section id="about" class="section section-split">
+    <div class="split-text">
+      <h2>Tentang Kami</h2>
+      <p>
+        Kami adalah penyedia layanan Internet (ISP) yang berfokus pada solusi Metro Ethernet (Metro-E)
+        untuk segmen enterprise dan institusi. Kami menghadirkan koneksi yang stabil, latensi rendah,
+        serta keandalan tinggi dengan standar layanan profesional.
+      </p>
+      <ul class="highlight-list">
+        <li>✔ Fokus pada konektivitas dedicated</li>
+        <li>✔ Infrastruktur jaringan handal</li>
+        <li>✔ Dukungan teknis berpengalaman</li>
+      </ul>
+    </div>
+    <div class="split-card">
+      <h3>Enterprise Connectivity Partner</h3>
+      <p>Kami tidak sekadar menyediakan koneksi, tetapi membangun fondasi jaringan yang mendukung pertumbuhan bisnis Anda.</p>
+    </div>
   </section>
 
-  <section id="metro-e" class="section">
+  <section id="metro-e" class="section section-highlight">
     <h2>Apa itu Metro Ethernet?</h2>
-    <p>
-      Metro Ethernet adalah layanan Layer 2 dedicated yang menghubungkan antar lokasi bisnis dengan bandwidth
-      terjamin dan performa konsisten.
-    </p>
+    <div class="features">
+      <div class="card">
+        <h3>Dedicated Connection</h3>
+        <p>Koneksi point-to-point atau multi-site tanpa sharing bandwidth, memastikan performa konsisten.</p>
+      </div>
+      <div class="card">
+        <h3>Low Latency</h3>
+        <p>Ideal untuk data center, interkoneksi server, VoIP, dan aplikasi real-time.</p>
+      </div>
+      <div class="card">
+        <h3>Scalable & Secure</h3>
+        <p>Mudah dikembangkan sesuai kebutuhan bisnis dengan tingkat keamanan tinggi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="section">
+    <h2>Daftar Paket Metro Ethernet</h2>
+    <p>Pilihan paket konektivitas dedicated yang dapat disesuaikan dengan kebutuhan bisnis Anda.</p>
+    <div class="features">
+      <div class="card">
+        <h3>Metro-E Basic</h3>
+        <p><strong>Bandwidth:</strong> 1 Gbps</p>
+        <p><strong>Use Case:</strong> Kantor cabang, operasional dasar</p>
+      </div>
+      <div class="card">
+        <h3>Metro-E Business</h3>
+        <p><strong>Bandwidth:</strong> 2 Gbps</p>
+        <p><strong>Use Case:</strong> Enterprise, aplikasi cloud</p>
+      </div>
+      <div class="card">
+        <h3>Metro-E Corporate</h3>
+        <p><strong>Bandwidth:</strong> 3 Gbps</p>
+        <p><strong>Use Case:</strong> Data center, interkoneksi kritikal</p>
+      </div>
+       <div class="card">
+        <h3>Metro-E Corporate</h3>
+        <p><strong>Bandwidth:</strong> 3 Gbps</p>
+        <p><strong>Use Case:</strong> Data center, interkoneksi kritikal</p>
+      </div>
+    </div>
   </section>
 
   <section id="benefits" class="section">
@@ -357,16 +467,19 @@
     <p>Diskusikan kebutuhan jaringan Anda bersama tim profesional kami.</p>
     <div class="cta-actions">
       <a class="btn-primary" href="mailto:info@saptamedia.id">
-        ✉️ Hubungi Sales (Email)
+        <span class="icon">📧</span> Hubungi Sales (Email)
       </a>
       <a class="btn-secondary" href="https://wa.me/6281128001310" target="_blank">
-        💬 Hubungi Sales (WhatsApp)
+        <span class="icon">🟢</span> Hubungi Sales (WhatsApp)
       </a>
     </div>
   </section>
 
   <footer>
-    © 2025 PT Sapta Media Sejahtera. All rights reserved.
+    © 2025 PT Sapta Media Sejahtera. All rights reserved.<br>
+    <span style="opacity:0.85; font-size:13px; display:block; margin-top:6px;">
+      Alamat Kantor: Jl. Raya Wonogiri–Ponorogo No. KM 21, RT.02/RW.03, Sempon, Pandeyan, Kec. Jatisrono, Kabupaten Wonogiri, Jawa Tengah 5769
+    </span>
   </footer>
 
 </body>
