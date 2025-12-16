@@ -37,6 +37,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: nowrap; /* prevent wrap */
     }
 
     header img {
@@ -180,15 +181,37 @@
       }
 
       header img {
-        height: 56px;
+        height: 52px;
+        flex-shrink: 0; /* keep logo left */
       }
 
       nav {
         display: flex;
+        align-items: center;
         gap: 14px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        white-space: nowrap;
       }
+
+      nav a {
+        margin-left: 0;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+
+      header img {
+        height: 56px;
+      }
+
+      nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      white-space: nowrap; /* keep menu in one line */
+    }
 
       nav a {
         margin-left: 0;
@@ -198,7 +221,7 @@
       .hero h1 {
         font-size: 32px;
       }
-    }
+    
 
       header img {
         height: 60px;
@@ -219,10 +242,12 @@
       .hero h1 {
         font-size: 32px;
       }
+    
 
       .hero h1 {
         font-size: 36px;
       }
+    
   </style>
 </head>
 <body>
