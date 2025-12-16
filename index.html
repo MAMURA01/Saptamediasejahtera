@@ -9,8 +9,8 @@
     :root {
       --primary-color: #082527;
       --secondary-color: #A2CE47;
-      --text-color: #0a0a0a;
       --bg-color: #f4f6f8;
+      --text-color: #0a0a0a;
       --white: #ffffff;
     }
 
@@ -18,129 +18,92 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Inter", Arial, sans-serif;
+      font-family: Inter, Arial, sans-serif;
     }
 
     body {
+      background: var(--bg-color);
       color: var(--text-color);
-      background-color: var(--bg-color);
       line-height: 1.7;
     }
 
-    /* HEADER */
+    /* ================= HEADER ================= */
     header {
       position: sticky;
       top: 0;
-      z-index: 1000; /* always on top */
+      z-index: 1000;
       background: var(--primary-color);
-      padding: 16px 40px;
+      padding: 14px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: nowrap;
     }
 
     header img {
-      height: 72px; /* bigger logo */
+      height: 60px;
+      flex-shrink: 0;
     }
 
-    nav a {
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--secondary-color);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    nav.nav-menu {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav.nav-menu a {
       color: var(--secondary-color);
       text-decoration: none;
       font-weight: 600;
-      font-size: 13px;
-      white-space: nowrap; /* keep text inline */
-      opacity: 0.95;
+      font-size: 14px;
+      white-space: nowrap;
     }
 
-    nav a:hover {
-      opacity: 1;
+    nav.nav-menu a:hover {
       color: #ffffff;
     }
 
-    /* HERO */
+    /* ================= HERO ================= */
     .hero {
-      position: relative;
-      padding: 120px 40px;
+      padding: 120px 24px;
       background: url("asset/bg.jpg") center 55% / cover no-repeat;
-      color: #fff;
+      color: #ffffff;
       text-align: center;
     }
 
-    
-
-    .hero-content {
-      position: relative;
-      max-width: 800px;
-      margin: auto;
-    }
-
     .hero h1 {
-      font-size: 46px;
-      margin-bottom: 20px;
+      font-size: 42px;
+      margin-bottom: 16px;
     }
 
     .hero p {
       font-size: 18px;
+      max-width: 720px;
+      margin: auto;
       opacity: 0.95;
     }
 
-    /* SECTION */
+    /* ================= SECTION ================= */
     .section {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-split {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .split-card {
-      background: linear-gradient(135deg, var(--primary-color), #0f3c40);
-      color: #fff;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
-
-    .split-card h3 {
-      margin-bottom: 12px;
-      color: var(--secondary-color);
-    }
-
-    .highlight-list {
-      margin-top: 20px;
-      list-style: none;
-    }
-
-    .highlight-list li {
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .section-highlight {
-      background: #eef2f3;
-      border-radius: 24px;
-      padding: 80px 40px;
+      padding: 80px 24px;
       max-width: 1100px;
       margin: auto;
     }
 
     .section h2 {
+      font-size: 34px;
       color: var(--primary-color);
       margin-bottom: 20px;
-      font-size: 34px;
     }
 
-    .section p {
-      max-width: 900px;
-    }
-
-    /* FEATURES */
+    /* ================= CARDS ================= */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -149,338 +112,207 @@
     }
 
     .card {
-      background: #082527; /* card color changed */
+      background: var(--primary-color);
+      color: #ffffff;
       padding: 28px;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      color: #ffffff;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      transition: transform 0.25s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
     }
 
     .card h3 {
-      margin-bottom: 12px;
       color: var(--secondary-color);
+      margin-bottom: 10px;
     }
 
-    /* CTA */
+    /* ================= CTA ================= */
     .cta {
       background: linear-gradient(135deg, var(--primary-color), #0f3c40);
-      color: #fff;
-      padding: 80px 40px;
+      color: #ffffff;
+      padding: 80px 24px;
       text-align: center;
     }
 
     .cta h2 {
       font-size: 34px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    .cta p {
-      opacity: 0.95;
-    }
-
-    .cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+    .cta-actions {
       margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-actions a {
       background: var(--secondary-color);
       color: var(--primary-color);
-      padding: 16px 36px;
+      padding: 14px 28px;
       border-radius: 40px;
       text-decoration: none;
       font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .cta a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-    }
-
-    /* FOOTER */
+    /* ================= FOOTER ================= */
     footer {
       background: #0d0d0d;
       color: #f1f1f1;
       text-align: center;
-      padding: 24px;
+      padding: 28px 20px;
       font-size: 14px;
     }
 
+    footer span {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    /* ================= MOBILE ================= */
     @media (max-width: 768px) {
-      .section-split {
-        grid-template-columns: 1fr;
+      .menu-toggle {
+        display: block;
       }
 
-      header {
-        position: relative;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 16px;
-      }
-
-      /* hide menu by default */
       nav.nav-menu {
         display: none;
         position: absolute;
-        top: 64px;
+        top: 72px;
         right: 16px;
         background: var(--primary-color);
         flex-direction: column;
         gap: 16px;
         padding: 20px;
         border-radius: 12px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
       }
 
-      /* show when active */
       nav.nav-menu.active {
         display: flex;
       }
 
-      .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--secondary-color);
-        font-size: 28px;
-        cursor: pointer;
-      }
-
-      nav.nav-menu a {
-        font-size: 14px;
-        white-space: nowrap;
-      }
-    }
-
-      header img {
-        height: 52px;
-        flex-shrink: 0;
-      }
-
-      nav.nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
       .hero h1 {
         font-size: 32px;
       }
-    
-
-      header img {
-        height: 52px;
-        flex-shrink: 0; /* keep logo left */
-      }
-
-      nav {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: nowrap; /* force one line */
-      overflow-x: auto;  /* prevent stacking on small screens */
-      -webkit-overflow-scrolling: touch;
     }
-
-      nav a {
-        margin-left: 0;
-        font-size: 13px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-    
-
-      header img {
-        height: 56px;
-      }
-
-      nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      white-space: nowrap; /* keep menu in one line */
-    }
-
-      nav a {
-        margin-left: 0;
-        font-size: 14px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-    
-      header img {
-        height: 60px;
-      }
-
-      nav {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        margin-left: 0;
-        font-size: 14px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-    
-
-      .hero h1 {
-        font-size: 36px;
-      }
-    
   </style>
 </head>
 <body>
 
   <header>
-    <img src="asset/Saptamedia.png" alt="Sapta Media Sejahtera" />
+    <img src="asset/Saptamedia.png" alt="Sapta Media Sejahtera">
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <nav class="nav-menu">
       <a href="#about">Tentang Kami</a>
-      <a href="#metro-e">Metro-E</a>
-      <a href="#packages">Daftar Paket</a>
+      <a href="#metro">Metro-E</a>
       <a href="#benefits">Keunggulan</a>
       <a href="#contact">Kontak</a>
     </nav>
-  <script>
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.nav-menu');
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
-    </script>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>Solusi Layanan Metro Andal dan Profesional</h1>
-      <p>Konektivitas dedicated berperforma tinggi untuk enterprise, backbone, dan jaringan kritikal.</p>
-    </div>
+    <h1>Solusi Metro Ethernet Andal</h1>
+    <p>Konektivitas dedicated berperforma tinggi untuk enterprise, backbone, dan jaringan kritikal.</p>
   </section>
 
-  <section id="about" class="section section-split">
-    <div class="split-text">
-      <h2>Tentang Kami</h2>
-      <p>
-        Kami adalah penyedia layanan Internet (ISP) yang berfokus pada solusi Layanan Metro-E
-        untuk segmen enterprise dan institusi. Kami menghadirkan koneksi yang stabil, latensi rendah,
-        serta keandalan tinggi dengan standar layanan profesional.
-      </p>
-      <ul class="highlight-list">
-        <li>✔ Fokus pada konektivitas dedicated</li>
-        <li>✔ Infrastruktur jaringan handal</li>
-        <li>✔ Dukungan teknis berpengalaman</li>
-      </ul>
-    </div>
-    <div class="split-card">
-      <h3>Enterprise Connectivity Partner</h3>
-      <p>Kami tidak sekadar menyediakan koneksi, tetapi membangun fondasi jaringan yang mendukung pertumbuhan bisnis Anda.</p>
-    </div>
+  <section id="about" class="section">
+    <h2>Tentang Kami</h2>
+    <p>Kami adalah penyedia layanan Internet (ISP) yang berfokus pada solusi Metro Ethernet (Metro‑E) untuk segmen enterprise dan institusi dengan koneksi stabil, latensi rendah, dan SLA profesional.</p>
   </section>
-
-  <section id="metro-e" class="section section-highlight">
-    <h2>Apa itu Metro Ethernet?</h2>
-    <div class="features">
-      <div class="card">
-        <h3>Dedicated Connection</h3>
-        <p>Koneksi point-to-point atau multi-site tanpa sharing bandwidth, memastikan performa konsisten.</p>
-      </div>
-      <div class="card">
-        <h3>Low Latency</h3>
-        <p>Ideal untuk data center, interkoneksi server, VoIP, dan aplikasi real-time.</p>
-      </div>
-      <div class="card">
-        <h3>Scalable & Secure</h3>
-        <p>Mudah dikembangkan sesuai kebutuhan bisnis dengan tingkat keamanan tinggi.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="packages" class="section">
-    <h2>Daftar Paket Metro Ethernet</h2>
-    <p>Pilihan paket konektivitas dedicated yang dapat disesuaikan dengan kebutuhan bisnis Anda.</p>
-    <div class="features">
-      <div class="card">
-        <h3>Metro-E Basic</h3>
-        <p><strong>Bandwidth:</strong> 1 Gbps</p>
-        <p><strong>Use Case:</strong> Kantor cabang, operasional dasar</p>
-      </div>
-      <div class="card">
-        <h3>Metro-E Business</h3>
-        <p><strong>Bandwidth:</strong> 2 Gbps</p>
-        <p><strong>Use Case:</strong> Enterprise, aplikasi cloud</p>
-      </div>
-      <div class="card">
-        <h3>Metro-E Corporate</h3>
-        <p><strong>Bandwidth:</strong> 3 Gbps</p>
-        <p><strong>Use Case:</strong> Data center, interkoneksi kritikal</p>
-      </div>
-       <div class="card">
-        <h3>Metro-E</h3>
-        <p><strong>Bandwidth:</strong> >3 Gbps</p>
-        <p><strong>More info:</strong> By call</p>
-      </div>
-    </div>
-  </section>
+   
 
   <section id="benefits" class="section">
-    <h2>Keunggulan Layanan Metro-E Kami</h2>
+    <h2>Keunggulan Layanan</h2>
+    <div class="features">
+      <div class="card"><h3>Bandwidth Dedicated</h3><p>Tanpa sharing, stabil dan konsisten.</p></div>
+      <div class="card"><h3>Latensi Rendah</h3><p>Ideal untuk aplikasi real-time.</p></div>
+      <div class="card"><h3>SLA Enterprise</h3><p>Jaminan uptime dan dukungan profesional.</p></div>
+      <div class="card"><h3>Scalable</h3><p>Mudah ditingkatkan sesuai kebutuhan.</p></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="packages" class="section">
+    <h2>Daftar Paket Metro Ethernet</h2>
+    <p>Pilih paket Metro Ethernet sesuai kebutuhan bisnis Anda. Semua paket dapat dikustomisasi dan terhubung langsung ke tim sales kami.</p>
+
     <div class="features">
       <div class="card">
-        <h3>Bandwidth Dedicated</h3>
-        <p>Tanpa sharing, performa stabil untuk kebutuhan kritikal.</p>
+        <h3>Metro-E 1 Gbps</h3>
+        <p>Dedicated bandwidth untuk kantor cabang dan operasional ringan.</p>
+        <p><strong>Rp5.000.000</strong></p>
+      
+        <a href="https://wa.me/6281128001310" target="_blank">💬 Konsultasi via WhatsApp</a>
       </div>
-      <div class="card">
-        <h3>Latensi Rendah</h3>
-        <p>Optimal untuk data center, VoIP, dan aplikasi real-time.</p>
+
+    <div class="card">
+        <h3>Metro-E 2 Gbps</h3>
+        <p>Ideal untuk enterprise menengah dengan trafik data tinggi.</p>
+        <p><strong>Rp9.500.000</strong></p>
+    
+        <a href="https://wa.me/6281128001310" target="_blank">💬 Konsultasi via WhatsApp</a>
       </div>
-      <div class="card">
-        <h3>SLA Enterprise</h3>
-        <p>Jaminan uptime tinggi dengan dukungan teknis profesional.</p>
-      </div>
-      <div class="card">
-        <h3>Scalable</h3>
-        <p>Mudah ditingkatkan mengikuti pertumbuhan bisnis Anda.</p>
+
+    <div class="card">
+        <h3>Metro-E 3 Gbps</h3>
+        <p>Solusi backbone & data center dengan performa maksimal.</p>
+        <p><strong>Rp14.000.000</strong></p>
+      
+        <a href="https://wa.me/6281128001310" target="_blank">💬 Konsultasi via WhatsApp</a>
+</div>
+    <div class="card">
+        <h3>Metro-E 4 Gbps</h3>
+        <p>Solusi backbone & data center dengan performa maksimal.</p>
+        <p><strong>Rp18.000.000</strong></p>
+      
+        <a href="https://wa.me/6281128001310" target="_blank">💬 Konsultasi via WhatsApp</a>
+</div>
+    <div class="card">
+        <h3>Metro-E 5 Gbps</h3>
+        <p>Solusi backbone & data center dengan performa maksimal.</p>
+        <p><strong>Rp23.000.000</strong></p>
+      
+        <a href="https://wa.me/6281128001310" target="_blank">💬 Konsultasi via WhatsApp</a>
+</div>
+    <div class="card">
+        <h3>Metro-E 10 Gbps</h3>
+        <p>Solusi backbone & data center dengan performa maksimal.</p>
+        <p><strong>Rp45.000.000</strong></p>
+      
+        <a href="https://wa.me/6281128001310" target="_blank">💬 Konsultasi via WhatsApp</a>
       </div>
     </div>
   </section>
 
   <section id="contact" class="cta">
     <h2>Siap Meningkatkan Konektivitas Bisnis Anda?</h2>
-    <p>Diskusikan kebutuhan jaringan Anda bersama tim profesional kami.</p>
+    <p>Hubungi tim kami sekarang.</p>
     <div class="cta-actions">
-      <a class="btn-primary" href="mailto:info@saptamedia.id">
-        <span class="icon">📧</span> Hubungi Sales (Email)
-      </a>
-      <a class="btn-secondary" href="https://wa.me/6281128001310" target="_blank">
-        <span class="icon">🟢</span> Hubungi Sales (WhatsApp)
-      </a>
+      <a href="mailto:info@saptamedia.id">📧 Email Sales</a>
+      <a href="https://wa.me/6281128001310" target="_blank">💬 WhatsApp Sales</a>
     </div>
   </section>
 
   <footer>
-    © 2025 PT Sapta Media Sejahtera. All rights reserved.<br>
-    <span style="opacity:0.85; font-size:13px; display:block; margin-top:6px;">
-      📌Alamat Kantor: Jl. Raya Wonogiri–Ponorogo No. KM 21, RT.02/RW.03, Sempon, Pandeyan, Kec. Jatisrono, Kabupaten Wonogiri, Jawa Tengah 5769
-    </span>
+    © 2025 PT Sapta Media Sejahtera
+    <span>Jl. Raya Wonogiri–Ponorogo No. KM 21, RT.02/RW.03, Sempon, Pandeyan, Kec. Jatisrono, Kabupaten Wonogiri, Jawa Tengah 5769</span>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
