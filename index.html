@@ -172,14 +172,36 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        display: none;
+      header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
       }
+
+      header img {
+        height: 60px;
+      }
+
+      nav {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin-left: 0;
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
 
       .hero h1 {
         font-size: 36px;
       }
-    }
   </style>
 </head>
 <body>
